@@ -8,7 +8,7 @@ defmodule ProjectDealWeb.ReplyController do
   action_fallback ProjectDealWeb.FallbackController
 
   def create(conn, %{"reply" => reply_params}) do
-    case Posts.create_reply(thread_params) do
+    case Posts.create_reply(reply_params) do
     	{:ok, %Reply{} = reply} ->
 	      conn
 	      |> put_status(:created)
@@ -19,9 +19,9 @@ defmodule ProjectDealWeb.ReplyController do
     end
   end
 
-  def list(conn, %{"id" => id}) do
-  	thread = Posts.get_thread!(id)
-    render(conn, "show.json", thread: thread)
-  end
+#  def list(conn, %{"id" => id}) do
+#  	thread = Posts.get_thread!(id)
+#    render(conn, "show.json", thread: thread)
+#  end
 
 end
