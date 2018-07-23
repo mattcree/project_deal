@@ -2,7 +2,15 @@ defmodule ProjectDealWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :project_deal
 
   socket "/socket", ProjectDealWeb.UserSocket
-
+  
+  plug(Plug.Static.IndexHtml, at: "/")
+  plug(
+    Plug.Static,
+    at: "/",
+    from: "priv/frontend/build/",
+    only: ~w(index.html favicon.ico static service-worker.js)
+  )
+  
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
