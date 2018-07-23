@@ -4,7 +4,8 @@ To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
+  * Install [Yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable) 
+  * Install Node.js dependencies with `cd priv/frontend && npm install && yarn build`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
