@@ -25,7 +25,6 @@ defmodule ProjectDealWeb.UserController do
 
   def update(conn, %{"name" => name, "user" => user_params}) do
     user = Accounts.get_by!(%{"name" => name})
-    
     with {:ok, %User{} = user} <- Accounts.update_user(user, user_params) do
       render(conn, "show.json", user: user)
     end
