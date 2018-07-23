@@ -51,7 +51,7 @@ defmodule ProjectDeal.Accounts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_by!(%{"name" => name}), do: Repo.get_by!(User, username: name)
+  def get_by(%{"name" => name}), do: Repo.get_by(User, username: name)
 
 
   @doc """
